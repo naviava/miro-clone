@@ -9,6 +9,7 @@ const font = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Miro Clone",
   description: "This is a Miro Clone developed by Navin Avadhani.",
+  icons: ["/logo.svg"],
 };
 
 export default function RootLayout({
