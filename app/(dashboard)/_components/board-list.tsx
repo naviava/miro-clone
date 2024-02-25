@@ -2,6 +2,7 @@
 
 import { EmptySearch } from "./empty-search";
 import { EmptyFavorites } from "./empty-favorites";
+import { EmptyBoards } from "./empty-boards";
 
 interface IProps {
   orgId: string;
@@ -23,7 +24,7 @@ export function BoardList({ orgId, query }: IProps) {
   }
 
   if (!data?.length) {
-    return <div>No boards found</div>;
+    return <EmptyBoards />;
   }
 
   return <div>{JSON.stringify(query)}</div>;
