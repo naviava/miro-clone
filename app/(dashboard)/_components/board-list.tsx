@@ -1,6 +1,7 @@
 "use client";
 
 import { EmptySearch } from "./empty-search";
+import { EmptyFavorites } from "./empty-favorites";
 
 interface IProps {
   orgId: string;
@@ -18,7 +19,7 @@ export function BoardList({ orgId, query }: IProps) {
   }
 
   if (!data?.length && query.favorites) {
-    return <div>No favorites</div>;
+    return <EmptyFavorites />;
   }
 
   if (!data?.length) {
