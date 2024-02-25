@@ -5,6 +5,7 @@ import {
   useOrganization,
   OrganizationSwitcher,
 } from "@clerk/nextjs";
+
 import { SearchInput } from "./search-input";
 import { InviteButton } from "./invite-button";
 
@@ -40,7 +41,7 @@ export function Navbar() {
           }}
         />
       </div>
-      {organization && <InviteButton />}
+      {!!organization && <InviteButton />}
       <UserButton />
     </div>
   );
