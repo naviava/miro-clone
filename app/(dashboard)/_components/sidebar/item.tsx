@@ -1,10 +1,12 @@
 "use client";
 
+import { useCallback, useMemo } from "react";
 import Image from "next/image";
+
 import { useOrganization, useOrganizationList } from "@clerk/nextjs";
 
+import { Hint } from "~/components/hint";
 import { cn } from "~/lib/utils";
-import { useCallback, useMemo } from "react";
 
 interface IProps {
   id: string;
@@ -28,16 +30,23 @@ export function Item({ id, name, imageUrl }: IProps) {
 
   return (
     <div className="relative aspect-square">
-      <Image
-        fill
-        src={imageUrl}
-        alt={name}
-        onClick={handleClick}
-        className={cn(
-          "cursor-pointer rounded-md opacity-75 transition hover:opacity-100",
-          isActive && "opacity-100",
-        )}
-      />
+      <Hint
+        label="Create organization"
+        side="right"
+        align="start"
+        sideOffset={18}
+      >
+        <Image
+          fill
+          src={imageUrl}
+          alt={name}
+          onClick={handleClick}
+          className={cn(
+            "cursor-pointer rounded-md opacity-75 transition hover:opacity-100",
+            isActive && "opacity-100",
+          )}
+        />
+      </Hint>
     </div>
   );
 }
